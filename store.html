@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>リユースショップ｜うずまさ とんがりグループ</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- グローバルナビ（ヘッダー） -->
+  <header style="background: #ffffff; color: #388e3c; padding: 32px 64px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #c8e6c9;">
+    <h1 style="display:flex; align-items:center; gap:24px;">
+      <img src="Tongari Logo.png" alt="うずまさとんがりグループ ロゴ" style="height:64px; width:auto; vertical-align:middle; border-radius:12px; box-shadow:0 2px 12px rgba(56,142,60,0.18);">
+      <a href="index.html" style="color: inherit; text-decoration: none; font-size:2.2rem; font-weight:700;">うずまさとんがりグループ</a>
+    </h1>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="schedule.html">活動スケジュール</a></li>
+        <li><a href="news.html">ニュース</a></li>
+        <li><a href="store.html" class="active">リユースショップ</a></li>
+        <li><a href="https://forms.gle/Eyt4q38CcPh7p83Y6">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- サブヘッダー -->
+  <div class="sub-header">
+    <h1>リユースショップ</h1>
+  </div>
+
+  <main class="reuse-shop-main">
+
+    <!-- 説明エリア -->
+    <section class="shop-intro">
+      <h2>地域から、こども食堂へ</h2>
+      <p>
+        「リユースショップ」は、京都市内で集めた手芸用品や衣類、雑貨などを再利用して販売し、<br>
+        売上はこども食堂の運営費に活用しています。
+      </p>
+      <p>
+        寄付は、こども食堂の開催日などのイベント時に会場へ直接お持ちいただくか、<br>
+        スタッフによる受け取り（京都市内）にも対応しております。<br>
+        ご希望があれば、お気軽にご相談ください。
+      </p>
+
+      <p>
+        <strong>寄付受付中：</strong>
+        <a href="https://forms.gle/Eyt4q38CcPh7p83Y6" target="_blank">寄付はこちら</a>
+      </p>
+      <p>
+        <strong>寄付いただける品の例：</strong><br>
+        ・使わなくなった布・毛糸・ボタンなどの手芸用品<br>
+        ・状態の良い衣類やバッグ、小物雑貨<br>
+        ・再販売可能な日用品（未使用・清潔なもの） など
+      </p>
+      <p>
+        ※寄付前に内容をご相談いただけると助かります。
+      </p>
+    </section>
+
+    <!-- 商品一覧 -->
+    <section class="product-grid">
+      <div class="product-card">
+        <img src="img/product1.jpg" alt="ろ" />
+        <h3>ろ</h3>
+        <p>¥300</p>
+      </div>
+      <div class="product-card">
+        <img src="img/product2.jpg" alt="い" />
+        <h3>い</h3>
+        <p>¥500</p>
+      </div>
+      <!-- 他の商品をここに追加 -->
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <p>© 2025 うずまさ とんがりグループ</p>
+      <p>所在地：京都府京都市右京区山ノ内五反田町18<br>京都先端科学大学 太秦キャンパス</p>
+      <p>連絡先：<a href="mailto:uzumasa.tongari@gmail.com">uzumasa.tongari@gmail.com</a></p>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.instagram.com/uzumasa_tongari/" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="https://www.mercari.com/jp/u/yourshop/" target="_blank" aria-label="メルカリ">
+        <i class="fas fa-store fa-lg"></i>
+      </a>
+      <a href="https://www.kyoto-su.ac.jp/" target="_blank" aria-label="大学公式HP">
+        <i class="fas fa-university fa-lg"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // ハンバーガーメニュー表示切替
+    let menuManualOpen = false;
+    function handleResize() {
+      const navLinks = document.getElementById('nav-links');
+      const menuToggle = document.getElementById('menu-toggle');
+      const navHeight = navLinks.scrollHeight;
+      if(window.innerWidth < 700 || navHeight > 48) {
+        if (!menuManualOpen) navLinks.style.display = 'none';
+        menuToggle.style.display = 'block';
+      } else {
+        navLinks.style.display = 'flex';
+        menuToggle.style.display = 'none';
+      }
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    setInterval(handleResize, 500);
+    document.getElementById('menu-toggle').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const navLinks = document.getElementById('nav-links');
+      menuManualOpen = !menuManualOpen;
+      navLinks.style.display = menuManualOpen ? 'flex' : 'none';
+    });
+    document.addEventListener('click', function(e) {
+      const navLinks = document.getElementById('nav-links');
+      const menuToggle = document.getElementById('menu-toggle');
+      if(menuManualOpen && !navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuManualOpen = false;
+        navLinks.style.display = 'none';
+        handleResize();
+      }
+    });
+    // ...既存のスライドショー・セクション遷移JS...
+  });
+</script>
+</body>
+</html>

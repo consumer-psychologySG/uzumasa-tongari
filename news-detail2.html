@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>とんがり食堂開催ニュース</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header style="background: #ffffff; color: #388e3c; padding: 32px 64px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #c8e6c9;">
+    <h1 style="display:flex; align-items:center; gap:24px;">
+      <img src="Tongari Logo.png" alt="うずまさとんがりグループ ロゴ" style="height:64px; width:auto; vertical-align:middle; border-radius:12px; box-shadow:0 2px 12px rgba(56,142,60,0.18);">
+      <a href="index.html" style="color: inherit; text-decoration: none; font-size:2.2rem; font-weight:700;">うずまさとんがりグループ</a>
+    </h1>
+    <nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="メニュー" style="display:none; background:none; border:none; font-size:2.2rem; color:#388e3c; cursor:pointer;">
+        <span style="display:block; width:32px; height:4px; background:#388e3c; margin:6px 0; border-radius:2px;"></span>
+        <span style="display:block; width:32px; height:4px; background:#388e3c; margin:6px 0; border-radius:2px;"></span>
+        <span style="display:block; width:32px; height:4px; background:#388e3c; margin:6px 0; border-radius:2px;"></span>
+      </button>
+      <ul id="nav-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="schedule.html">活動スケジュール</a></li>
+        <li><a href="news.html">ニュース</a></li>
+        <li><a href="store.html">リユースショップ</a></li>
+        <li><a href="https://forms.gle/Eyt4q38CcPh7p83Y6">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+  <h2>とんがり食堂開催ニュース</h2>
+    <p>2025年9月20日（土）にKUAS太秦キャンパスで「とんがり食堂」を開催します。<br>みなさまのご参加をお待ちしています。</p>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <p>© 2025 うずまさ とんがりグループ</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // ハンバーガーメニュー表示切替
+    // PCで全画面表示じゃない場合はハンバーガーボタン表示
+    let menuManualOpen = false;
+    function handleResize() {
+      const navLinks = document.getElementById('nav-links');
+      const menuToggle = document.getElementById('menu-toggle');
+      if(window.innerWidth < 1200) {
+        if (!menuManualOpen) navLinks.style.display = 'none';
+        menuToggle.style.display = 'block';
+      } else {
+        navLinks.style.display = 'flex';
+        menuToggle.style.display = 'none';
+        menuManualOpen = false;
+      }
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    setInterval(handleResize, 500);
+    document.getElementById('menu-toggle').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const navLinks = document.getElementById('nav-links');
+      menuManualOpen = !menuManualOpen;
+      navLinks.style.display = menuManualOpen ? 'flex' : 'none';
+    });
+    document.addEventListener('click', function(e) {
+      const navLinks = document.getElementById('nav-links');
+      const menuToggle = document.getElementById('menu-toggle');
+      if(menuManualOpen && !navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuManualOpen = false;
+        navLinks.style.display = 'none';
+        handleResize();
+      }
+    });
+    // ...既存のスライドショー・セクション遷移JS...
+  });
+  </script>
+</body>
+</html>

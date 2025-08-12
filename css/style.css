@@ -1,0 +1,303 @@
+nav ul li a.active {
+  border-bottom: 3px solid #388e3c;
+  padding-bottom: 5px;
+}
+nav ul li a,
+#nav-links li a {
+  text-decoration: none !important;
+}
+nav ul li a:visited,
+#nav-links li a:visited {
+  color: #388e3c;
+}
+/* ===== 基本設定 ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff; /* 白背景 */
+  color: #264d26; /* 深緑のテキスト */
+}
+
+/* ===== ヘッダー ===== */
+header {
+  background: #ffffff;
+  color: #388e3c;
+  padding: 20px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #c8e6c9;
+  position: relative;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin: 0;
+  color: #388e3c;
+}
+
+/* ===== ナビゲーション ===== */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a:hover {
+  color: #66bb6a;
+}
+
+.nav-menu a.active {
+  border-bottom: 3px solid #388e3c;
+  padding-bottom: 5px;
+}
+
+/* ===== サブヘッダー ===== */
+.sub-header {
+  background-color: #e8f5e9;
+  text-align: center;
+  padding: 20px;
+}
+
+.sub-header h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #2e7d32;
+}
+
+/* ===== メインセクション ===== */
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+/* ===== 商品カード ===== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  background: #fff;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===== フッター ===== */
+footer {
+  background-color: #f1f8f5;
+  color: #264d26;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+    justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
+.footer-left,
+/* min-width削除で幅の制約をなくす */
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-right a {
+  color: #388e3c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+/* ===== レスポンシブ対応 ===== */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+  }
+  .nav-menu.open {
+    display: flex;
+  }
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-left, .footer-right {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #nav-links {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100vw !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(56,142,60,0.12);
+  }
+  #nav-links li {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  #nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 18px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #nav-links {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100vw !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #e8f5e9;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 16px rgba(56,142,60,0.18);
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 0 0 16px 16px;
+    transition: all 0.3s;
+  }
+  #nav-links li {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  #nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 22px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #388e3c;
+    background: none;
+  }
+  #nav-links li:last-child a {
+    border-bottom: none;
+  }
+}
+
+/* ===== ハンバーガーメニュー ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  background: none;
+  border: none;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #388e3c;
+  margin: 4px 0;
+  border-radius: 3px;
+}
+
+/* ===== SNSアイコンなど ===== */
+.sns-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-right a i {
+  margin-right: 8px;
+  width: 20px;
+  text-align: center;
+}
+
+/* ===== カレンダー用（例） ===== */
+.calendar-day.sunday {
+  color: #d32f2f; /* 赤で日曜強調 */
+}
+
+/* ===== スライドショー ===== */
+.activity-slideshow {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(56,142,60,0.15);
+}
+.slide-track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+}
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
