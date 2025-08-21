@@ -301,3 +301,44 @@ footer {
   background-size: cover;
   background-position: center;
 }
+
+/* ヘッダーh1のロゴとタイトルをスマホで縦並び＆中央寄せに */
+@media (max-width: 600px) {
+  header h1 {
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: center !important;
+    font-size: 1.3rem !important;
+    padding: 0 !important;
+  }
+  header h1 img {
+    height: 48px !important;
+  }
+  header {
+    padding: 16px 8px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
+
+/* ページ全体の最小幅・最大幅を設定し、中央寄せ */
+body {
+  min-width: 340px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f7faf7;
+}
+
+/* メインコンテンツの最大幅を揃える場合 */
+.section-link,
+#activities,
+#news-instagram,
+#event-calendar,
+#store,
+#faq,
+#access {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
